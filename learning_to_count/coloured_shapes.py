@@ -27,6 +27,12 @@ def create_trinagles():
     '''Description'''
     dd = DataCreator(dtype=np.uint8)
     dd.zeros_bkgd((100, 100, 3))
+    # dd.add_noise(scale=10.0, abs_noise=True)
+    for ii in range(10):
+        error = dd.add_shape(shape='square', colour=(255, 255, 255), size=(3, 3))
+        error = dd.add_shape(shape='square', colour=(255, 0, 0), size=(3, 3))
+        error = dd.add_shape(shape='square', colour=(10, 0, 255), size=(4, 1))
+    dd.add_noise(scale=40.0, abs_noise=True)
     plt.imshow(dd.img)
     plt.show()
 

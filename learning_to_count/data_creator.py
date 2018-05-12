@@ -31,8 +31,8 @@ class DataCreator(object):
         :param dtype: int | float
         :return: numpy array
         """
-        self.img =  np.zeros(size, dtype=self.dtype)
-        self.mask = np.zeros_like(self.img, dtype=np.bool)
+        self.img = np.zeros(size, dtype=self.dtype)
+        self.mask = np.zeros((size[0], size[1]), dtype=np.bool)
 
 
     def add_noise(self, noise='normal', mean=0, scale=1.0, abs_noise=True):
@@ -52,10 +52,46 @@ class DataCreator(object):
         if abs_noise:
             noise_array = np.abs(noise_array, out=noise_array)
         out = self.img + noise_array
+        out[out > 255] = 255
+        out[out < 0] = 0
         self.img = out.astype(self.dtype)
 
-    def add_shape(self, loc, shape = 'square', colour=(255, 255, 255), size = (3, 3)):
-        """Add shape of self.img"""
+    def add_shape(self, shape = 'square', colour=(255, 255, 255), size = (3, 3)):
+        """Add shape to random location in self.img, unless self.mask = True for any pixel."""
+        (maxy, maxx, bands) = self.img.shape
+        assert len(colour) == bands
+        loc = None
+        size_to_check_y = int(np.ceil((size[0] - 1.0) / 2.0))
+        size_to_check_x = int(np.ceil((size[1] - 1.0) /2.0))
+        coords = []
+        attempts = 0
+        while not loc:
+            loc_y = np.random.randint(size_to_check_y, maxy - size_to_check_y)
+            loc_x = np.random.randint(size_to_check_x, maxx - size_to_check_x)
+            for ss in range(-size_to_check_y, size_to_check_y + 1):
+                test_loc_y = loc_y + ss
+                for tt in range(-size_to_check_x, size_to_check_x + 1):
+                    test_loc_x = loc_x + tt
+                    coords.append((test_loc_x, test_loc_y))
+            all_false = True
+            for cc_x, cc_y in coords:
+                if self.mask[cc_y, cc_x]:
+                    all_false = False
+            if all_false:
+                # Set mask to True and replace self.img with colour
+                for cc_x, cc_y in coords:
+                    self.mask[cc_y, cc_x] = True
+                    self.img[cc_y, cc_x, :] = colour
+                loc = True
+            else:
+                attempts += 1
+                if attempts > 1000:
+                    loc = True
+                    print('Warning: Cannot find space for a new shape.')
+                    return True
+        return False
+
+
 
 
 
