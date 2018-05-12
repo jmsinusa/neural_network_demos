@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2330575-5e28-478e-ae46-ebb9821bc177" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/learning_to_count/coloured_shapes.py" afterPath="$PROJECT_DIR$/learning_to_count/coloured_shapes.py" />
       <change beforePath="$PROJECT_DIR$/learning_to_count/data_creator.py" afterPath="$PROJECT_DIR$/learning_to_count/data_creator.py" />
     </list>
@@ -19,8 +17,8 @@
       <file leaf-file-name="data_creator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/learning_to_count/data_creator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="53" column="36" lean-forward="false" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+            <state relative-caret-position="209">
+              <caret line="84" column="33" lean-forward="false" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="33" />
               <folding>
                 <element signature="e#144#181#0" expanded="true" />
               </folding>
@@ -31,8 +29,8 @@
       <file leaf-file-name="coloured_shapes.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/learning_to_count/coloured_shapes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="34" column="25" lean-forward="false" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+            <state relative-caret-position="275">
+              <caret line="85" column="28" lean-forward="true" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
               <folding>
                 <element signature="e#117#154#0" expanded="true" />
               </folding>
@@ -704,8 +702,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/learning_to_count/data_creator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="53" column="36" lean-forward="false" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+        <state relative-caret-position="209">
+          <caret line="84" column="33" lean-forward="false" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="33" />
           <folding>
             <element signature="e#144#181#0" expanded="true" />
           </folding>
@@ -714,8 +712,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/learning_to_count/coloured_shapes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="34" column="25" lean-forward="false" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+        <state relative-caret-position="275">
+          <caret line="85" column="28" lean-forward="true" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
           <folding>
             <element signature="e#117#154#0" expanded="true" />
           </folding>
